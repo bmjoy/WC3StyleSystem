@@ -91,7 +91,7 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
 				BuildTargetGroup.WebGL,
                 BuildTargetGroup.Android,
                 BuildTargetGroup.iOS,
-                BuildTargetGroup.WP8,
+				BuildTargetGroup.WSA,
                 BuildTargetGroup.BlackBerry
             };
 
@@ -99,7 +99,7 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
             {
                 BuildTargetGroup.Android,
                 BuildTargetGroup.iOS,
-                BuildTargetGroup.WP8,
+				BuildTargetGroup.WSA,
                 BuildTargetGroup.BlackBerry,
 				BuildTargetGroup.PSM, 
 				BuildTargetGroup.Tizen, 

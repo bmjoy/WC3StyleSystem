@@ -48,7 +48,7 @@ public class SkillArea : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-		Caster = GlobalInfo.current.localPlayer;
+		//Caster = GlobalInfo.current.localPlayer;
 
         joystick = GetComponent<SkillJoystick>();
 

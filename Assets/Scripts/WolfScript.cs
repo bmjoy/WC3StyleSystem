@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 
 public class WolfScript : NetworkBehaviour {
 
+	/*
 	public GameObject prefabs_footDust;
 	public GameObject prefabs_iceBurst;
 
@@ -68,5 +69,6 @@ public class WolfScript : NetworkBehaviour {
 
 		Destroy (Instantiate (prefabs_footDust, transform.position,Quaternion.identity), 3f);
 	}
+	*/
 
 }

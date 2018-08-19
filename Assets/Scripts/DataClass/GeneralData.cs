@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class GeneralData {
 
+	public WCUnit GetSpellTargetUnit;
+	public WCUnit GetTriggerUnit;
 
 }

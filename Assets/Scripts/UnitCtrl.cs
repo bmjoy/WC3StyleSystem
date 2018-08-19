@@ -21,7 +21,7 @@ public class UnitCtrl : NetworkBehaviour {
 	void Start () {
 		ani = GetComponent<Animator>();
 		movCtrl = GetComponent<MoveController> ();
-		spellPad = GlobalInfo.current.spellPad;
+		//spellPad = GlobalInfo.current.spellPad;
 
 		hasBall = false;
 		isDead = false;
@@ -63,10 +63,10 @@ public class UnitCtrl : NetworkBehaviour {
 
 		//Shoot ok
 
-		GlobalInfo.current.nowBallOwner = target.gameObject;
+		//GlobalInfo.current.nowBallOwner = target.gameObject;
 		target.hasBall = true;
-		GlobalInfo.current.spellPad.SetActive (false);
-		target.GetComponent<LocalPlayerSetting> ().SetLocalSkillPad ();
+		//GlobalInfo.current.spellPad.SetActive (false);
+		//target.GetComponent<LocalPlayerSetting> ().SetLocalSkillPad ();
 		hasBall = false;
 
 

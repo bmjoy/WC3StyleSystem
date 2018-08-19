@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class EventManager : MonoBehaviour {
 
-	private Dictionary <string, UnityEvent> eventDictionary;
+	private Dictionary <int, GeneralEvent> eventDictionary;
 
 	private static EventManager eventManager;
 
@@ -23,7 +23,7 @@ public class EventManager : MonoBehaviour {
 				}
 				else
 				{
-					eventManager.Init (); 
+					eventManager.Init ();
 				}
 			}
 
@@ -35,41 +35,41 @@ public class EventManager : MonoBehaviour {
 	{
 		if (eventDictionary == null)
 		{
-			eventDictionary = new Dictionary<string, UnityEvent>();
+			eventDictionary = new Dictionary<int, GeneralEvent>();
 		}
 	}
 
-	public static void StartListening (string eventName, UnityAction listener)
+	public static void StartListening (int eventName, UnityAction<GeneralData> listener)
 	{
-		UnityEvent thisEvent = null;
+		GeneralEvent thisEvent = null;
 		if (instance.eventDictionary.TryGetValue (eventName, out thisEvent))
 		{
 			thisEvent.AddListener (listener);
 		} 
 		else
 		{
-			thisEvent = new UnityEvent ();
+			thisEvent = new GeneralEvent ();
 			thisEvent.AddListener (listener);
 			instance.eventDictionary.Add (eventName, thisEvent);
 		}
 	}
 
-	public static void StopListening (string eventName, UnityAction listener)
+	public static void StopListening (int eventName, UnityAction<GeneralData> listener)
 	{
 		if (eventManager == null) return;
-		UnityEvent thisEvent = null;
+		GeneralEvent thisEvent = null;
 		if (instance.eventDictionary.TryGetValue (eventName, out thisEvent))
 		{
 			thisEvent.RemoveListener (listener);
 		}
 	}
 
-	public static void TriggerEvent (string eventName)
+	public static void TriggerEvent (int eventName, GeneralData generalData)
 	{
-		UnityEvent thisEvent = null;
+		GeneralEvent thisEvent = null;
 		if (instance.eventDictionary.TryGetValue (eventName, out thisEvent))
 		{
-			thisEvent.Invoke ();
+			thisEvent.Invoke (generalData);
 		}
 	}
 }

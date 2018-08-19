@@ -114,7 +114,7 @@ public static class ETCMenu{
 
 
 	[MenuItem ("GameObject/EasyTouch Controls/Area", false, 0)]
-	public static ETCArea AddJoystickArea(){
+	public static ETCArea AddJoystickArea(){ 
 
 		GameObject canvas = SetupUI();
 		
